@@ -1,0 +1,55 @@
+This is a FullStack project(MERN Stack) - Tweet Kar
+
+Tech STACK: 
+Frontend: ReactJS, TailwindCSS, Context API, Axios
+Backend: NodeJS, Express, Multer, MongoDB, Mongoose, Postman(for testing APIs)
+
+
+Frontend flow:
+App.jsx: It contains routes to different pages in the application. 
+It uses Public and Private Routes to protect routes.
+It uses Suspense to provide a fallback Component.
+
+Register.jsx: It contains a form to register the the application.
+After registeration the user is navigated to login page.
+
+Login.jsx: It signs in already registered user to the app and redirects the user to Home screen.
+
+Home.jsx: It displays tweets of all users.
+Here user can create a new tweet, like a tweet, retweet, comment on a tweet and also delete tweets created by the logged in user.
+
+Profile.jsx: It shows profile of a particular user.
+It displays information of the user and his/her tweets and replies.
+Any user can follow that profile user.
+If profile user and logged in user are same then logged in user can update its information and update his/her profile picture.
+
+TweetDetails.jsx: It shows details of a particular tweet and it's replies.
+
+NotFoundPage.jsx: It displays 404 Page Not Found error when a user tries to visit a page that is not defined.
+
+
+Backend APIs:
+
+Auth APIs:
+
+/api/auth/register (POST): Stores new user data in the database and returns an error if the user already exists.
+/api/auth/login (POST): Verifies user credentials and returns a JWT token for subsequent authentication.
+User APIs:
+
+/api/user/:id (GET): Retrieves user information by ID.
+/api/user/:id/follow (POST): Allows users to follow another user.
+/api/user/:id/unfollow (POST): Enables users to unfollow another user.
+/api/user/:id (PUT): Allows users to update their profile information.
+/api/user/:id/tweets (GET): Retrieves tweets belonging to a specific user.
+
+
+Tweet APIs:
+
+/api/tweet (POST): Creates a new tweet.
+/api/tweet/:id/like (POST): Allows users to like a tweet.
+/api/tweet/:id/dislike (POST): Allows users to dislike a tweet.
+/api/tweet/:id/reply (POST): Allows users to reply to a tweet.
+/api/tweet/:id (GET): Retrieves details of a specific tweet.
+/api/tweet (GET): Retrieves all tweets.
+/api/tweet/:id (DELETE): Deletes a tweet.
+/api/tweet/:id/retweet (POST): Allows users to retweet a tweet.
